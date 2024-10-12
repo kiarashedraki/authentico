@@ -1,0 +1,12 @@
+{
+  "entryFile": "app.js",
+  "controllerPathGlobs": ["./routes/*.js"],
+  "spec": {
+    "outputDirectory": "./public",
+    "specVersion": 3,
+    "entryFile": "app.js"
+  },
+  "routes": {
+    "routesDir": "./routes"
+  }
+}
