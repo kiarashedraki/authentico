@@ -1,7 +1,4 @@
-# auth
-Thank you for sharing the complete tree structure! Based on this information, here’s an updated README template that includes specifics from your project files, which should align better with your JavaScript setup using Node.js and Passport for authentication.
-
----
+https://chatgpt.com/c/67200165-b1e8-800f-9c26-d5d71f6e9fa7
 
 # Authentico
 
@@ -47,9 +44,11 @@ Authentico is a Node.js authentication service designed to provide secure and sc
 ### Running the Application
 
 Start the server with:
+
 ```
 npm start
 ```
+
 Ensure that your MongoDB service is running and that `app.js` is configured to connect to your database correctly. You will also need to set up your environment variables in a `.env` file for any API keys or database URIs.
 
 ## Features
