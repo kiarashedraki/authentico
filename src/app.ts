@@ -1,8 +1,9 @@
+// src/app.ts
+
 import dotenv from 'dotenv';
 dotenv.config();
 
 import express, { Request, Response } from 'express';
-import session from 'express-session';
 import passport from 'passport';
 
 import connectDB from './config/db';
@@ -13,21 +14,14 @@ import profileRoutes from './routes/profile';
 
 const app = express();
 
+// Middleware to parse JSON bodies
+app.use(express.json());
+
 // Connect to MongoDB
 connectDB();
 
-// Configure session middleware
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET!,
-    resave: false,
-    saveUninitialized: true,
-  })
-);
-
-// Initialize Passport
+// Initialize Passport (no sessions)
 app.use(passport.initialize());
-app.use(passport.session());
 
 // Routes
 app.use('/auth', authRoutes); // Authentication routes
