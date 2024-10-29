@@ -92,10 +92,17 @@ router.get(
           email: user.email,
         };
         const token = jwt.sign(payload, process.env.JWT_SECRET!, { expiresIn: '1h' });
-        res.json({ token });
+        res.json({
+          token,
+          user: {
+            displayName: user.displayName,
+            email: user.email
+          }
+        });
       }
     )(req, res, next);
   }
 );
+
 
 export default router;

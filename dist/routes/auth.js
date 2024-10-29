@@ -73,7 +73,13 @@ router.get('/google/callback', function (req, res, next) {
             email: user.email,
         };
         var token = jsonwebtoken_1.default.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' });
-        res.json({ token: token });
+        res.json({
+            token: token,
+            user: {
+                displayName: user.displayName,
+                email: user.email
+            }
+        });
     })(req, res, next);
 });
 exports.default = router;
